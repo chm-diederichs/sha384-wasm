@@ -1,0 +1,23 @@
+{
+  "name": "sha384-wasm",
+  "version": "1.0.0",
+  "description": "SHA384 implemented in WASM",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chm-diederichs/sha384-wasm.git"
+  },
+  "keywords": [
+    "sha384",
+    "WebAssembly"
+  ],
+  "author": "Christophe Diederichs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chm-diederichs/sha384-wasm/issues"
+  },
+  "homepage": "https://github.com/chm-diederichs/sha384-wasm#readme"
+}
