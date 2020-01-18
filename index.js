@@ -14,11 +14,10 @@ const wasm = require('./sha384.js')({
 })
 
 let head = 0
-// assetrt head % 8 === 0 to guarantee alignment
 const freeList = []
 
 module.exports = Sha384
-const hashLength = 48
+const SHA384_BYTES = module.exports.SHA384_BYTES = 48
 
 function Sha384 () {
   if (!(this instanceof Sha384)) return new Sha384()
@@ -26,17 +25,17 @@ function Sha384 () {
 
   if (!freeList.length) {
     freeList.push(head)
-    head += 200
+    head += 200 // need 200 bytes for internal state
   }
 
   this.finalized = false
-  this.digestLength = hashLength
+  this.digestLength = SHA384_BYTES
   this.pointer = freeList.pop()
   this.leftover
 
   wasm.memory.fill(0, this.pointer, this.pointer + 200)
 
-  if (this.pointer + hashLength > wasm.memory.length) wasm.realloc(this.pointer + 200)
+  if (this.pointer + this.digestLength > wasm.memory.length) wasm.realloc(this.pointer + 200)
 }
 
 Sha384.prototype.update = function (input, enc) {

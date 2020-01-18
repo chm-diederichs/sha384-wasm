@@ -1,7 +1,6 @@
 const sha384 = require('./')
 const crypto = require('crypto')
-const ref = require('js-sha512').sha384
-const sodium = require('sodium-native')
+const sha384js = require('js-sha512').sha384
 const vectors = require('./vectors.json')
 
 // timing benchmark
@@ -10,7 +9,7 @@ const vectors = require('./vectors.json')
   crypto.randomFillSync(buf)
 
   const hash = sha384()
-  const jsHash = ref.create()
+  const jsHash = sha384js.create()
   const refHash = crypto.createHash('sha384') 
 
   console.time('wasm')
