@@ -1,4 +1,4 @@
-const sha384 = require('./')
+const sha384 = require('../')
 const crypto = require('crypto')
 const sha384js = require('js-sha512').sha384
 const vectors = require('./vectors.json')
