@@ -3,6 +3,10 @@
 ```js
 const sha384 = require('sha384-wasm')
 
+if (!Sha384.SUPPORTED) {
+  console.log('WebAssembly not supported by your runtime')
+}
+
 var hash = sha384()
   .update('hello')
   .update(' ')
