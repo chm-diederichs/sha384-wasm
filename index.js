@@ -21,7 +21,7 @@ const SHA384_BYTES = module.exports.SHA384_BYTES = 48
 
 function Sha384 () {
   if (!(this instanceof Sha384)) return new Sha384()
-  if (!(wasm && wasm.exports)) throw new Error('WASM not loaded. Wait for Blake2b.ready(cb)')
+  if (!(wasm && wasm.exports)) throw new Error('WASM not loaded. Wait for Sha384.ready(cb)')
 
   if (!freeList.length) {
     freeList.push(head)
