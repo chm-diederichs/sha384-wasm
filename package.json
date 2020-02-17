@@ -1,6 +1,6 @@
 {
   "name": "sha384-wasm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SHA384 implemented in WASM",
   "main": "index.js",
   "scripts": {
