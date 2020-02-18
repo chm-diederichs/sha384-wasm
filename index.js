@@ -31,7 +31,7 @@ function Sha384 () {
   this.finalized = false
   this.digestLength = SHA384_BYTES
   this.pointer = freeList.pop()
-  this.leftover
+  this.leftover = Buffer.alloc(0)
 
   wasm.memory.fill(0, this.pointer, this.pointer + 200)
 
